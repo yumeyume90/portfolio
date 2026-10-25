@@ -1,5 +1,6 @@
 (function () {
-  var QUERY = '業務　困りごと　相談';
+  var T = window.I18N.t;
+  function Q() { return window.I18N.query(); }
   var typed = document.getElementById('typed');
   var suggest = document.getElementById('suggest');
   var foundEls = document.querySelectorAll('[data-found]');
@@ -24,15 +25,16 @@
     setPhase('typing');
     t1 = setInterval(function () {
       n++;
-      typed.textContent = QUERY.slice(0, n);
-      if (n >= QUERY.length) {
+      var q = Q();
+      typed.textContent = q.slice(0, n);
+      if (n >= q.length) {
         clearInterval(t1);
         setPhase('suggest');
         t2 = setTimeout(function () { setPhase('found'); }, 1700);
       }
     }, 130);
   }
-  function finish() { clearInterval(t1); clearTimeout(t2); typed.textContent = QUERY; setPhase('found'); }
+  function finish() { clearInterval(t1); clearTimeout(t2); typed.textContent = Q(); setPhase('found'); }
 
   document.getElementById('replay').addEventListener('click', function () { reduce ? finish() : start(); });
   document.getElementById('top-form').addEventListener('submit', function (e) {
@@ -81,17 +83,17 @@
     ev.preventDefault();
     var body = f.body.value.trim(), name = f.name.value.trim(), mail = f.mail.value.trim();
     var ok = true;
-    if (!body) { e.body.textContent = 'ご相談内容を書いてください。'; ok = false; }
-    else if (body.length > 2000) { e.body.textContent = '2000文字以内でお願いします。'; ok = false; }
-    if (!name) { e.name.textContent = 'お名前を入力してください。'; ok = false; }
-    if (!mail) { e.mail.textContent = 'メールアドレスを入力してください。'; ok = false; }
-    else if (!MAIL_RE.test(mail) || mail.length > 254) { e.mail.textContent = 'メールアドレスの形式を確認してください。'; ok = false; }
+    if (!body) { e.body.textContent = T('e.body'); ok = false; }
+    else if (body.length > 2000) { e.body.textContent = T('e.bodyLen'); ok = false; }
+    if (!name) { e.name.textContent = T('e.name'); ok = false; }
+    if (!mail) { e.mail.textContent = T('e.mail'); ok = false; }
+    else if (!MAIL_RE.test(mail) || mail.length > 254) { e.mail.textContent = T('e.mailFmt'); ok = false; }
     if (!ok) { status.hidden = true; return; }
 
-    if (!ENDPOINT) { say('送信先の準備中のため、まだ送れません。お手数ですが時間をおいてお試しください。', 'ng'); return; }
+    if (!ENDPOINT) { say(T('s.notReady'), 'ng'); return; }
 
     send.disabled = true;
-    say('送信しています…');
+    say(T('s.sending'));
     var payload = { message: body, name: name, email: mail, website: hp.value, elapsed: Date.now() - openedAt };
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
@@ -101,16 +103,26 @@
       .then(function (res) {
         if (res && res.ok) {
           form.reset(); openedAt = Date.now();
-          say('送信しました。内容を確認して、ご入力のメールアドレスにご連絡します。', 'ok');
+          say(T('s.ok'), 'ok');
         } else if (res && res.error === 'busy') {
-          say('ただいま送信が集中しています。時間をおいてもう一度お試しください。', 'ng');
+          say(T('s.busy'), 'ng');
         } else if (res && res.error === 'invalid') {
-          say('入力内容を確認して、もう一度お試しください。', 'ng');
+          say(T('s.invalid'), 'ng');
         } else {
-          say('送信できなかった可能性があります。時間をおいてもう一度お試しください。', 'ng');
+          say(T('s.fail'), 'ng');
         }
       })
-      .catch(function () { say('送信できなかった可能性があります。通信環境を確認して、もう一度お試しください。', 'ng'); })
+      .catch(function () { say(T('s.net'), 'ng'); })
       .then(function () { clearTimeout(timer); send.disabled = false; });
+  });
+  // 言語を切り替えたとき：検索語と入力欄・メッセージを差し替える
+  var q2 = document.getElementById('q2');
+  q2.value = Q();
+  window.I18N.onChange(function () {
+    q2.value = Q();
+    if (!suggest.hidden || !foundEls[0].hidden) finish();
+    else if (!reduce) start(); else finish();
+    Object.keys(e).forEach(function (k) { e[k].textContent = ''; });
+    status.hidden = true;
   });
 })();

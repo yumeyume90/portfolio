@@ -14,7 +14,7 @@
   --ph: #C9CBB8;
   --err: #8E2F25;
   --serif: "DM Serif Display", "Times New Roman", serif;
-  --sans: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --sans: "Zen Kaku Gothic New", "Noto Sans KR", "Hiragino Sans", "Yu Gothic", "Apple SD Gothic Neo", sans-serif;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -241,3 +241,14 @@ textarea.fld { resize: vertical; }
 .dark-btn[disabled] { opacity: .55; cursor: progress; }
 .status.ok { border-top-color: var(--moss-dk); }
 .status.ng { color: var(--err); border-top-color: var(--err); }
+
+/* ---------- language switch ---------- */
+.lang { display: inline-flex; align-items: center; gap: 2px; padding: 2px; border: 1px solid var(--fg); border-radius: 999px; font-size: 12px; line-height: 1; flex: none; }
+.lang button { font: inherit; color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 8px 11px; cursor: pointer; }
+.lang button:hover { color: var(--fg); }
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.sh-row .lang.push { margin-left: auto; }
+.p-head .lang { margin-left: auto; }
+html:lang(ko) body { font-family: "Noto Sans KR", var(--sans); }
+html:lang(ko) .big, html:lang(ko) .serif { word-break: keep-all; }
+html:lang(ko) body, html:lang(ko) .lead, html:lang(ko) .p-lead { word-break: keep-all; }

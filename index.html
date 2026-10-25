@@ -23,7 +23,7 @@
 <meta name="theme-color" content="#BFC2AC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfilePage", "@id": "https://yumeyume90.github.io/portfolio/#page", "url": "https://yumeyume90.github.io/portfolio/", "name": "木本夢乃 ポートフォリオ", "inLanguage": "ja", "mainEntity": {"@id": "https://yumeyume90.github.io/portfolio/#person"}}, {"@type": "Person", "@id": "https://yumeyume90.github.io/portfolio/#person", "name": "木本夢乃", "alternateName": ["Yumeno Kimoto", "木本 夢乃"], "jobTitle": "フリーランスエンジニア（業務改善・AI駆動開発）", "url": "https://yumeyume90.github.io/portfolio/", "image": "https://yumeyume90.github.io/portfolio/img/me.jpg", "description": "山口県を拠点に、フルリモートで業務改善・業務効率化を支援。要件定義からGoogle Apps Scriptでの業務自動化、AI駆動開発での業務ツール開発まで担当。", "address": {"@type": "PostalAddress", "addressRegion": "山口県", "addressCountry": "JP"}, "knowsAbout": ["業務改善", "業務効率化", "業務自動化", "要件定義", "AI駆動開発", "Google Apps Script", "RAG", "Streamlit", "Next.js", "TypeScript", "Python"], "sameAs": ["https://github.com/yumeyume90"]}]}</script>
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
@@ -40,46 +40,47 @@
             <form class="sbox" role="search" id="top-form">
               <label class="sr" for="q-typed">検索ワード</label>
               <div class="typed" id="q-typed" aria-live="off"><span id="typed">業務　困りごと　相談</span><span class="caret" aria-hidden="true"></span></div>
-              <button type="button" class="icon-btn" id="replay" aria-label="消して、もう一度検索する"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              <button type="button" class="icon-btn" id="replay" aria-label="消して、もう一度検索する" data-i18n-attr="aria-label:a.replay"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5"/></svg></button>
               <button type="submit" class="go" aria-label="検索する"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
             </form>
-            <ul class="suggest pop" id="suggest" aria-label="検索候補" hidden>
+            <ul class="suggest pop" id="suggest" aria-label="検索候補" data-i18n="suggest" data-i18n-attr="aria-label:a.suggest" hidden>
               <li>業務　困りごと　相談<b>　どこに</b></li>
               <li>業務　困りごと　相談<b>　誰に頼む</b></li>
               <li>業務　困りごと　相談<b>　めんどくさい</b></li>
               <li><span class="dot" aria-hidden="true"></span><span style="flex:1">業務　困りごと　相談<b>　木本夢乃</b></span><span class="tag">人物</span></li>
             </ul>
           </div>
-          <a class="pill" href="#profile">採用担当の方へ</a>
+          <a class="pill" href="#profile" data-i18n="pill">採用担当の方へ</a>
+          <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="ko" lang="ko">한국어</button></div>
         </div>
         <nav class="tabs" aria-label="検索の種類">
-          <a href="#top" aria-current="page">すべて</a>
-          <a href="#works">実績</a>
-          <a href="#profile">人物</a>
-          <span title="まだありません">画像</span>
-          <span title="まだありません">動画</span>
-          <span>もっと見る ▾</span>
-          <span class="push">ツール ▾</span>
+          <a href="#top" aria-current="page" data-i18n="tab.all">すべて</a>
+          <a href="#works" data-i18n="tab.works">実績</a>
+          <a href="#profile" data-i18n="tab.person">人物</a>
+          <span data-i18n="tab.img">画像</span>
+          <span data-i18n="tab.video">動画</span>
+          <span data-i18n="tab.more">もっと見る ▾</span>
+          <span class="push" data-i18n="tab.tools">ツール ▾</span>
         </nav>
       </div>
     </header>
 
-    <h1 class="sr">木本夢乃｜山口県のフリーランスエンジニア（業務改善・AI駆動開発）</h1>
+    <h1 class="sr" data-i18n="h1">木本夢乃｜山口県のフリーランスエンジニア（業務改善・AI駆動開発）</h1>
     <div class="found-area" id="top">
       <div class="in">
         <div class="found-row" data-found>
-          <p class="pop"><b>業務　困りごと　相談</b> に一致する人が <span class="one">1</span> 件見つかりました！<br><a href="#results" class="ul go-link">スクロールしてください</a></p>
+          <p class="pop" data-i18n="found"><b>業務　困りごと　相談</b> に一致する人が <span class="one">1</span> 件見つかりました！<br><a href="#results" class="ul go-link">スクロールしてください</a></p>
           <aside class="tips pop d1" aria-labelledby="tips-h">
-            <h2 id="tips-h">検索のヒント：</h2>
+            <h2 id="tips-h" data-i18n="tips.h">検索のヒント：</h2>
             <ul>
-              <li>困りごとは、ふわっとしたままで大丈夫です</li>
-              <li>「めんどくさい」も立派な検索ワードです</li>
-              <li>AIで作った <span class="serif" style="font-size:16px">＝＝≠</span> 考えてない</li>
-              <li>それでも見つからないときは、<a href="#contact" class="ul">本人に聞くのが早いです</a></li>
+              <li data-i18n="tips.1">困りごとは、ふわっとしたままで大丈夫です</li>
+              <li data-i18n="tips.2">「めんどくさい」も立派な検索ワードです</li>
+              <li data-i18n="tips.3">AIで作った <span class="serif" style="font-size:16px">＝＝≠</span> 考えてない</li>
+              <li data-i18n="tips.4">それでも見つからないときは、<a href="#contact" class="ul">本人に聞くのが早いです</a></li>
             </ul>
           </aside>
         </div>
-        <p class="searching" data-searching hidden>検索しています<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+        <p class="searching" data-searching data-i18n="searching" hidden>検索しています<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
       </div>
     </div>
 
@@ -92,7 +93,7 @@
           <span class="pop d1 indent" data-found>you<span class="stop">.</span></span>
           <span class="searching-word" data-searching hidden>Searching</span>
         </p>
-        <svg class="fish pop d2" data-found role="img" aria-label="困りごとの池から、木本夢乃の名刺が釣り上げられているイラスト" viewBox="0 0 680 440">
+        <svg class="fish pop d2" data-found role="img" aria-label="困りごとの池から、木本夢乃の名刺が釣り上げられているイラスト" data-i18n-attr="aria-label:a.fish" viewBox="0 0 680 440">
           <defs>
             <filter id="moss" x="0" y="0" width="100%" height="100%">
               <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="7" result="blot"/>
@@ -110,7 +111,7 @@
           <ellipse cx="210" cy="368" rx="168" ry="38" fill="none" stroke="#29231F" stroke-width="1.4"/>
           <ellipse cx="215" cy="368" rx="56" ry="11" fill="none" stroke="#F2F2EE" stroke-width="1.2" opacity="0.8"/>
           <ellipse cx="215" cy="368" rx="92" ry="19" fill="none" stroke="#F2F2EE" stroke-width="1" opacity="0.45"/>
-          <text x="66" y="430" font-family="Zen Kaku Gothic New, sans-serif" font-size="12" fill="#29231F">困りごとの池</text>
+          <text x="66" y="430" font-family="Zen Kaku Gothic New, sans-serif" font-size="12" fill="#29231F" data-i18n="svg.pond">困りごとの池</text>
           <g class="sway">
             <line x1="606" y1="318" x2="214" y2="44" stroke="#29231F" stroke-width="11" stroke-linecap="round"/>
             <line x1="606" y1="318" x2="214" y2="44" stroke="#DDBF72" stroke-width="8" stroke-linecap="round"/>
@@ -125,7 +126,7 @@
                 <text x="146" y="244" font-family="Zen Kaku Gothic New, sans-serif" font-weight="500" font-size="23" letter-spacing="3" fill="#29231F">木本 夢乃</text>
                 <text x="146" y="264" font-family="DM Serif Display, serif" font-size="12" letter-spacing="1.5" fill="#5A5650">YUMENO KIMOTO</text>
                 <line x1="146" y1="276" x2="286" y2="276" stroke="#C9C8BF" stroke-width="1"/>
-                <text x="146" y="291" font-family="Zen Kaku Gothic New, sans-serif" font-size="10" fill="#5A5650">業務改善・AI駆動開発</text>
+                <text x="146" y="291" font-family="Zen Kaku Gothic New, sans-serif" font-size="10" fill="#5A5650" data-i18n="svg.role">業務改善・AI駆動開発</text>
                 <circle cx="282" cy="218" r="9" fill="#5F7A4F"/>
               </g>
             </g>
@@ -137,13 +138,13 @@
           <path d="M506 322 H614 L600 412 H520 Z" fill="#F2F2EE" stroke="#29231F" stroke-width="1.4" stroke-linejoin="round"/>
           <path d="M506 322 Q560 290 614 322" fill="none" stroke="#29231F" stroke-width="1.2"/>
           <text x="560" y="372" text-anchor="middle" font-family="DM Serif Display, serif" font-size="26" fill="#29231F">3</text>
-          <text x="560" y="392" text-anchor="middle" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="#29231F">実績</text>
+          <text x="560" y="392" text-anchor="middle" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="#29231F" data-i18n="svg.works">実績</text>
         </svg>
       </div>
       <div class="band-foot">
         <div class="in">
-          <small>yumeno search は木本夢乃の応募用ポートフォリオです。実在の検索サービスではありません。</small>
-          <a class="scroll-cue" href="#results"><span class="bob" aria-hidden="true">↓</span>スクロール</a>
+          <small data-i18n="note.app">yumeno search は木本夢乃の応募用ポートフォリオです。実在の検索サービスではありません。</small>
+          <a class="scroll-cue" href="#results" data-i18n="scroll"><span class="bob" aria-hidden="true">↓</span>スクロール</a>
         </div>
       </div>
     </section>
@@ -162,38 +163,39 @@
               <button type="submit" class="go" aria-label="検索"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
             </form>
           </div>
+  <div class="lang push" role="group" aria-label="Language"><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="ko" lang="ko">한국어</button></div>
         </div>
         <nav class="tabs" aria-label="検索結果の種類">
-          <a href="#results" aria-current="page">すべて</a>
-          <a href="#works">実績</a>
-          <a href="#profile">人物</a>
-          <a href="#faq">よくある質問</a>
-          <a href="#contact">相談する</a>
+          <a href="#results" aria-current="page" data-i18n="tab.all">すべて</a>
+          <a href="#works" data-i18n="tab.works">実績</a>
+          <a href="#profile" data-i18n="tab.person">人物</a>
+          <a href="#faq" data-i18n="tab.faq">よくある質問</a>
+          <a href="#contact" data-i18n="tab.contact">相談する</a>
         </nav>
       </div>
     </header>
 
     <div class="in">
-      <p class="stats">約 1 人・3 件の実績が見つかりました（0.27 秒）</p>
+      <p class="stats" data-i18n="stats">約 1 人・3 件の実績が見つかりました（0.27 秒）</p>
 
       <div class="person">
         <article>
-          <p class="crumb">yumeno-kimoto › 人物</p>
+          <p class="crumb" data-i18n="crumb">yumeno-kimoto › 人物</p>
           <h2>
             <a class="rt" href="#profile">Yumeno Kimoto</a>
-            <span class="sub">木本夢乃 ─ 業務の困りごとを、使える道具にする人</span>
+            <span class="sub" data-i18n="sub">木本夢乃 ─ 業務の困りごとを、使える道具にする人</span>
           </h2>
-          <p class="lead"><span class="mk">業務</span>の<span class="mk">困りごと</span>を整理して、使えるツールに変える仕事をしています。要件定義から設計・実装まで、AI駆動開発で担当します。山口県を拠点に、フルリモートで全国の企業の業務効率化・業務自動化をお手伝いしています。小さなことでも、まずはお気軽にご<span class="mk">相談</span>ください。</p>
+          <p class="lead" data-i18n="lead"><span class="mk">業務</span>の<span class="mk">困りごと</span>を整理して、使えるツールに変える仕事をしています。要件定義から設計・実装まで、AI駆動開発で担当します。山口県を拠点に、フルリモートで全国の企業の業務効率化・業務自動化をお手伝いしています。小さなことでも、まずはお気軽にご<span class="mk">相談</span>ください。</p>
           <div class="sublinks">
-            <a class="ul" href="#profile">経歴</a>
-            <a class="ul" href="#skills">できること</a>
-            <a class="ul" href="#tech">使っている技術</a>
-            <a class="ul" href="#contact">相談する</a>
+            <a class="ul" href="#profile" data-i18n="sl.career">経歴</a>
+            <a class="ul" href="#skills" data-i18n="sl.skills">できること</a>
+            <a class="ul" href="#tech" data-i18n="sl.tech">使っている技術</a>
+            <a class="ul" href="#contact" data-i18n="tab.contact">相談する</a>
           </div>
         </article>
-        <aside class="card" aria-label="木本夢乃について">
-          <img class="me" src="img/me.jpg" alt="木本夢乃の写真" width="168" height="168">
-          <dl>
+        <aside class="card" aria-label="木本夢乃について" data-i18n-attr="aria-label:a.card">
+          <img class="me" src="img/me.jpg" alt="木本夢乃の写真" data-i18n-attr="alt:a.photo" width="168" height="168">
+          <dl data-i18n="card">
             <dt>肩書き</dt><dd>業務改善・AI駆動開発のフリーランス</dd>
             <dt>稼働</dt><dd>週40時間程度・フルリモート（応相談）</dd>
             <dt>拠点</dt><dd>山口県</dd>
@@ -204,53 +206,53 @@
       </div>
 
       <section id="works" aria-labelledby="works-h">
-        <h2 class="sec-h" id="works-h"><span class="serif">Works</span><small>実績（随時更新）</small></h2>
+        <h2 class="sec-h" id="works-h"><span class="serif">Works</span><small data-i18n="works.sub">実績（随時更新）</small></h2>
         <ol class="works">
           <li class="work">
             <div class="work-main">
               <span class="work-no" aria-hidden="true">01</span>
               <div>
-                <p class="kind">RAG ／ 文書検索</p>
-                <h3><a class="rt" href="https://yumeyume90.github.io/docsearch-insight/" target="_blank" rel="noopener">社内文書検索アシスタント</a></h3>
-                <p class="desc">社内規程への質問に、根拠となる文書と該当箇所を添えて答えます。<span class="mk">根拠が見つからない質問には答えません。</span></p>
+                <p class="kind" data-i18n="w1.kind">RAG ／ 文書検索</p>
+                <h3><a class="rt" href="https://yumeyume90.github.io/docsearch-insight/" target="_blank" rel="noopener" data-i18n="w1.title">社内文書検索アシスタント</a></h3>
+                <p class="desc" data-i18n="w1.desc">社内規程への質問に、根拠となる文書と該当箇所を添えて答えます。<span class="mk">根拠が見つからない質問には答えません。</span></p>
                 <p class="stack">Next.js ／ TypeScript ／ Claude ／ OpenAI Embeddings ／ Supabase</p>
-                <p class="acts"><a class="ul" href="https://yumeyume90.github.io/docsearch-insight/" target="_blank" rel="noopener">デモを見る ↗</a><small>固定のダミーデータで動くモックです</small></p>
+                <p class="acts"><a class="ul" href="https://yumeyume90.github.io/docsearch-insight/" target="_blank" rel="noopener" data-i18n="demo">デモを見る ↗</a><small data-i18n="w1.note">固定のダミーデータで動くモックです</small></p>
               </div>
             </div>
-            <a class="shot" href="https://yumeyume90.github.io/docsearch-insight/" target="_blank" rel="noopener" tabindex="-1"><img src="img/works-docsearch.jpg" alt="社内文書検索アシスタントのサムネイル。社内規程への質問に、根拠つきで答える" width="1280" height="720" loading="lazy" decoding="async"></a>
+            <a class="shot" href="https://yumeyume90.github.io/docsearch-insight/" target="_blank" rel="noopener" tabindex="-1"><img src="img/works-docsearch.jpg" alt="社内文書検索アシスタントのサムネイル。社内規程への質問に、根拠つきで答える" data-i18n-attr="alt:a.w1" width="1280" height="720" loading="lazy" decoding="async"></a>
           </li>
           <li class="work">
             <div class="work-main">
               <span class="work-no" aria-hidden="true">02</span>
               <div>
-                <p class="kind">Instagram 分析</p>
+                <p class="kind" data-i18n="w2.kind">Instagram 分析</p>
                 <h3 class="serif"><a class="rt" href="https://yumeyume90.github.io/reels-insight/" target="_blank" rel="noopener">Reels Insight</a></h3>
-                <p class="desc">リールが伸びた理由を、数値と動画の中身から分析します。<span class="mk">数値は毎朝自動で取得し</span>、採点と改善案まで出します。</p>
+                <p class="desc" data-i18n="w2.desc">リールが伸びた理由を、数値と動画の中身から分析します。<span class="mk">数値は毎朝自動で取得し</span>、採点と改善案まで出します。</p>
                 <p class="stack">Apps Script ／ Instagram Graph API ／ Gemini API</p>
-                <p class="acts"><a class="ul" href="https://yumeyume90.github.io/reels-insight/" target="_blank" rel="noopener">デモを見る ↗</a><a class="ul" href="https://github.com/yumeyume90/reels-insight" target="_blank" rel="noopener">GitHub ↗</a><small>デモは架空のアカウントのデータです</small></p>
+                <p class="acts"><a class="ul" href="https://yumeyume90.github.io/reels-insight/" target="_blank" rel="noopener" data-i18n="demo">デモを見る ↗</a><a class="ul" href="https://github.com/yumeyume90/reels-insight" target="_blank" rel="noopener">GitHub ↗</a><small data-i18n="w2.note">デモは架空のアカウントのデータです</small></p>
               </div>
             </div>
-            <a class="shot" href="https://yumeyume90.github.io/reels-insight/" target="_blank" rel="noopener" tabindex="-1"><img src="img/works-reels.jpg" alt="Reels Insightのサムネイル。投稿前後のリール動画をAIが採点し、直すべき点を教える" width="1280" height="720" loading="lazy" decoding="async"></a>
+            <a class="shot" href="https://yumeyume90.github.io/reels-insight/" target="_blank" rel="noopener" tabindex="-1"><img src="img/works-reels.jpg" alt="Reels Insightのサムネイル。投稿前後のリール動画をAIが採点し、直すべき点を教える" data-i18n-attr="alt:a.w2" width="1280" height="720" loading="lazy" decoding="async"></a>
           </li>
           <li class="work">
             <div class="work-main">
               <span class="work-no" aria-hidden="true">03</span>
               <div>
-                <p class="kind">データ分析ダッシュボード</p>
+                <p class="kind" data-i18n="w3.kind">データ分析ダッシュボード</p>
                 <h3 class="serif"><a class="rt" href="https://salon-insight-demo.streamlit.app/" target="_blank" rel="noopener">Salon Insight</a></h3>
-                <p class="desc">美容室の予約・顧客データをもとに、<span class="mk">サロンの状況を一画面で確認できる</span>ダッシュボードです。</p>
+                <p class="desc" data-i18n="w3.desc">美容室の予約・顧客データをもとに、<span class="mk">サロンの状況を一画面で確認できる</span>ダッシュボードです。</p>
                 <p class="stack">Streamlit ／ Python</p>
-                <p class="acts"><a class="ul" href="https://salon-insight-demo.streamlit.app/" target="_blank" rel="noopener">デモを見る ↗</a><small>初回の表示に時間がかかることがあります</small></p>
+                <p class="acts"><a class="ul" href="https://salon-insight-demo.streamlit.app/" target="_blank" rel="noopener" data-i18n="demo">デモを見る ↗</a><small data-i18n="w3.note">初回の表示に時間がかかることがあります</small></p>
               </div>
             </div>
-            <a class="shot" href="https://salon-insight-demo.streamlit.app/" target="_blank" rel="noopener" tabindex="-1"><img src="img/works-salon.jpg" alt="Salon Insightのサムネイル。美容室データ分析の自動化プロジェクト" width="1280" height="720" loading="lazy" decoding="async"></a>
+            <a class="shot" href="https://salon-insight-demo.streamlit.app/" target="_blank" rel="noopener" tabindex="-1"><img src="img/works-salon.jpg" alt="Salon Insightのサムネイル。美容室データ分析の自動化プロジェクト" data-i18n-attr="alt:a.w3" width="1280" height="720" loading="lazy" decoding="async"></a>
           </li>
         </ol>
       </section>
 
       <section id="faq" aria-labelledby="faq-h">
-        <h2 class="eyebrow" id="faq-h">他の人はこちらも検索</h2>
-        <div class="faq-grid">
+        <h2 class="eyebrow" id="faq-h" data-i18n="faq.h">他の人はこちらも検索</h2>
+        <div class="faq-grid" data-i18n="faq">
           <div>
             <h3>木本夢乃　頼める仕事</h3>
             <p>業務の整理と要件定義／Google Apps Script・スプレッドシートでの自動化／Claude・Gemini APIを使った分析ツール、文書検索（RAG）／Streamlitのダッシュボード／WordPressのサイト制作</p>
@@ -277,27 +279,27 @@
         <div>
           <h2 id="contact-h">
             <span class="serif">Search<br><span>again.</span></span>
-            <span class="ja">あなたの困りごとで、検索し直す</span>
+            <span class="ja" data-i18n="contact.sub">あなたの困りごとで、検索し直す</span>
           </h2>
-          <p class="note">いま困っていることを、そのまま書いてください。</p>
+          <p class="note" data-i18n="contact.note">いま困っていることを、そのまま書いてください。</p>
         </div>
         <form class="cform" id="contact-form" novalidate>
           <div class="f">
-            <label for="c-body">ご相談内容</label>
-            <textarea id="c-body" class="fld" rows="3" maxlength="2000" placeholder="例：毎月の集計作業を楽にしたい"></textarea>
+            <label for="c-body" data-i18n="f.body">ご相談内容</label>
+            <textarea id="c-body" class="fld" rows="3" maxlength="2000" placeholder="例：毎月の集計作業を楽にしたい" data-i18n-attr="placeholder:f.ph"></textarea>
             <p class="err" id="e-body" aria-live="polite"></p>
           </div>
           <div class="two">
-            <div class="f"><label for="c-name">お名前</label><input id="c-name" class="fld" type="text" autocomplete="name" maxlength="50"><p class="err" id="e-name" aria-live="polite"></p></div>
-            <div class="f"><label for="c-mail">メールアドレス</label><input id="c-mail" class="fld" type="email" autocomplete="email" maxlength="254"><p class="err" id="e-mail" aria-live="polite"></p></div>
+            <div class="f"><label for="c-name" data-i18n="f.name">お名前</label><input id="c-name" class="fld" type="text" autocomplete="name" maxlength="50"><p class="err" id="e-name" aria-live="polite"></p></div>
+            <div class="f"><label for="c-mail" data-i18n="f.mail">メールアドレス</label><input id="c-mail" class="fld" type="email" autocomplete="email" maxlength="254"><p class="err" id="e-mail" aria-live="polite"></p></div>
           </div>
           <div class="hp" aria-hidden="true">
             <label for="c-website">この欄は空のままにしてください</label>
             <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
           <div class="send-row">
-            <button type="submit" class="dark-btn" id="c-send">この内容で相談する</button>
-            <small>返信はご入力のメールアドレスにお送りします。</small>
+            <button type="submit" class="dark-btn" id="c-send" data-i18n="f.send">この内容で相談する</button>
+            <small data-i18n="f.reply">返信はご入力のメールアドレスにお送りします。</small>
           </div>
           <p class="status" id="c-status" role="status" hidden></p>
         </form>
@@ -307,10 +309,10 @@
     <footer class="in foot">
       <nav class="pager" aria-label="ページ送り">
         <div class="serif" aria-hidden="true">Yumeno<span>oooo</span> search</div>
-        <p><b aria-current="page">1</b><span style="color:var(--muted)">結果はこの1件だけです</span></p>
+        <p><b aria-current="page">1</b><span style="color:var(--muted)" data-i18n="pager">結果はこの1件だけです</span></p>
       </nav>
       <div class="legal">
-        <span>yumeno search は木本夢乃のポートフォリオです。実在の検索サービスではありません。</span>
+        <span data-i18n="legal">yumeno search は木本夢乃のポートフォリオです。実在の検索サービスではありません。</span>
         <span>© 2026 Yumeno Kimoto</span>
       </div>
     </footer>
@@ -337,14 +339,15 @@
         </defs>
         <circle cx="300" cy="300" r="300" fill="#6A8559" filter="url(#moss2)"/>
       </svg>
-      <img class="me-big" src="img/me.jpg" alt="木本夢乃の写真" width="800" height="800">
+      <img class="me-big" src="img/me.jpg" alt="木本夢乃の写真" data-i18n-attr="alt:a.photo" width="800" height="800">
     </div>
     <header class="in p-head" style="max-width:none">
       <a class="logo" href="#top">yumeno search</a>
-      <a class="ul" href="#results" style="font-size:13px">← 検索結果に戻る</a>
+      <a class="ul" href="#results" style="font-size:13px" data-i18n="back">← 検索結果に戻る</a>
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="ko" lang="ko">한국어</button></div>
     </header>
     <div class="p-name">
-      <p class="kicker">人物 ／ 山口県の業務改善・AI駆動開発のフリーランスエンジニア</p>
+      <p class="kicker" data-i18n="kicker">人物 ／ 山口県の業務改善・AI駆動開発のフリーランスエンジニア</p>
       <h2 id="name-h" class="p-h">
         <span class="serif">Yumeno</span>
         <span class="serif k">Kimoto</span>
@@ -354,11 +357,11 @@
   </section>
 
   <main class="in p-main">
-    <p class="p-lead">業務を理解し、技術でより良い形に変えていくことを仕事にしています。導入コンサルタントとして要件定義や顧客折衝を経験したあと、社内DXで業務改善に取り組み、現在は山口県を拠点に、AI駆動開発で業務ツールを作っています。</p>
+    <p class="p-lead" data-i18n="plead">業務を理解し、技術でより良い形に変えていくことを仕事にしています。導入コンサルタントとして要件定義や顧客折衝を経験したあと、社内DXで業務改善に取り組み、現在は山口県を拠点に、AI駆動開発で業務ツールを作っています。</p>
 
     <section class="p-sec" aria-labelledby="career-h">
-      <h2 class="sec-h" id="career-h"><span class="serif">Career</span><small>経歴</small></h2>
-      <ol class="career">
+      <h2 class="sec-h" id="career-h"><span class="serif">Career</span><small data-i18n="career.sub">経歴</small></h2>
+      <ol class="career" data-i18n="career">
         <li>
           <span class="when">2026.08 —</span>
           <div class="what"><p class="role">個人開発・フリーランス</p><p class="d">業務ツールの設計・開発。2026年9月から本格的にスクールでAI駆動開発の概念を学びながら実践中。</p></div>
@@ -376,8 +379,8 @@
 
     <div class="two-col">
       <section id="skills" aria-labelledby="sk-h">
-        <h2 class="sec-h" id="sk-h" style="margin-bottom:24px"><span class="serif">Skills</span><small>できること</small></h2>
-        <ol class="skills">
+        <h2 class="sec-h" id="sk-h" style="margin-bottom:24px"><span class="serif">Skills</span><small data-i18n="sl.skills">できること</small></h2>
+        <ol class="skills" data-i18n="skills">
           <li><span class="serif">1</span>業務の整理と要件定義</li>
           <li><span class="serif">2</span>Google Apps Script・スプレッドシートなどを活用した業務自動化</li>
           <li><span class="serif">3</span>各APIを使った分析ツール、文書検索（RAG）の開発</li>
@@ -386,29 +389,30 @@
         </ol>
       </section>
       <section id="tech" aria-labelledby="tc-h">
-        <h2 class="sec-h" id="tc-h" style="margin-bottom:24px"><span class="serif">Tools</span><small>使っている技術</small></h2>
+        <h2 class="sec-h" id="tc-h" style="margin-bottom:24px"><span class="serif">Tools</span><small data-i18n="sl.tech">使っている技術</small></h2>
         <p class="tools">Next.js, TypeScript, Python, Streamlit, Supabase, Google Apps Script, Claude, Gemini API, OpenAI API, WordPress</p>
       </section>
     </div>
 
     <section class="workstyle" aria-labelledby="work-h">
-      <h2 id="work-h">働き方</h2>
-      <p>週40時間程度、フルリモートで稼働できます。</p>
+      <h2 id="work-h" data-i18n="ws.h">働き方</h2>
+      <p data-i18n="ws.p">週40時間程度、フルリモートで稼働できます。</p>
     </section>
 
     <div class="p-cta">
-      <a class="dark-btn" href="#contact">この人に相談する</a>
-      <a class="ul" href="#works" style="font-size:15px">実績を見る</a>
+      <a class="dark-btn" href="#contact" data-i18n="cta">この人に相談する</a>
+      <a class="ul" href="#works" style="font-size:15px" data-i18n="seeworks">実績を見る</a>
     </div>
   </main>
 
   <footer class="in" style="max-width:1060px; padding-top:40px; padding-bottom:30px">
     <div class="legal">
-      <span>yumeno search は木本夢乃のポートフォリオです。実在の検索サービスではありません。</span>
+      <span data-i18n="legal">yumeno search は木本夢乃のポートフォリオです。実在の検索サービスではありません。</span>
       <span>© 2026 Yumeno Kimoto</span>
     </div>
   </footer>
 </div>
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
