@@ -65,7 +65,7 @@
   if (!reduce && !location.hash && window.scrollY < 40) start(); else finish();
 
   // 相談フォーム → Google Apps Script（送信先のアドレスはGAS側にだけあり、このページには書かない）
-  var ENDPOINT = ''; // GASのウェブアプリURL（https://script.google.com/macros/s/…/exec）
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzv0snWTJ4F5Qe5i6i_FrTxe7n3fyrFDzJ4Vduf1OMY-tGca2p8bpzDOaZem66Rfd8a/exec'; // GASのウェブアプリURL
   var openedAt = Date.now();
   var form = document.getElementById('contact-form');
   var status = document.getElementById('c-status');
