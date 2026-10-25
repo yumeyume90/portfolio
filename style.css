@@ -189,10 +189,10 @@ textarea.fld { resize: vertical; }
 .p-head .logo { font-size: 22px; }
 .p-name { position: relative; z-index: 2; padding: 40px max(clamp(16px, 11vw, 150px), env(safe-area-inset-right, 0px)) 0 max(clamp(16px, 11vw, 150px), env(safe-area-inset-left, 0px)); }
 .p-name .kicker { margin: 0 0 14px; font-size: 13px; letter-spacing: 0.08em; color: var(--muted-2); }
-.p-name h1 { margin: 0; font-weight: 400; }
-.p-name h1 .serif { display: block; font-size: clamp(72px, 14vw, 184px); line-height: 0.88; letter-spacing: -0.035em; }
-.p-name h1 .k { padding-left: 1.2em; white-space: nowrap; }
-.p-name h1 .ja { display: block; margin-top: 26px; font-size: 22px; font-weight: 500; letter-spacing: 0.2em; }
+.p-name .p-h { margin: 0; font-weight: 400; }
+.p-name .p-h .serif { display: block; font-size: clamp(72px, 14vw, 184px); line-height: 0.88; letter-spacing: -0.035em; }
+.p-name .p-h .k { padding-left: 1.2em; white-space: nowrap; }
+.p-name .p-h .ja { display: block; margin-top: 26px; font-size: 22px; font-weight: 500; letter-spacing: 0.2em; }
 .p-main { max-width: 1060px; padding-top: 72px; padding-bottom: 40px; }
 .p-lead { margin: 0; max-width: 30em; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.85; }
 .p-sec { margin-top: 96px; }
